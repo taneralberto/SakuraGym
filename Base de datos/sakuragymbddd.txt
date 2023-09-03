@@ -1,0 +1,441 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.3
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tiempo de generación: 02-12-2017 a las 01:28:38
+-- Versión del servidor: 5.0.51
+-- Versión de PHP: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Base de datos: `sakuragymbddd`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `configcategoria`
+-- 
+
+CREATE TABLE `configcategoria` (
+  `id` int(200) NOT NULL auto_increment,
+  `categoria` text NOT NULL,
+  `inscripcion` float NOT NULL,
+  `mensualidad` float NOT NULL,
+  `instructor` text NOT NULL,
+  `dias` varchar(100) NOT NULL,
+  `hora1` text NOT NULL,
+  `ampm1` text NOT NULL,
+  `hora2` text NOT NULL,
+  `ampm2` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=62 ;
+
+-- 
+-- Volcar la base de datos para la tabla `configcategoria`
+-- 
+
+INSERT INTO `configcategoria` VALUES (55, 'Pesas', 9500, 8000, 'Carlos y Orea', '-do-lu-ma-mi-ju-vi-sa', '7:00', 'AM', '9:00', 'PM');
+INSERT INTO `configcategoria` VALUES (53, 'TRX', 6500, 5000, 'Sol María', '-do-mi-sa', '8:30', 'AM', '10:30', 'AM');
+INSERT INTO `configcategoria` VALUES (54, 'Natación', 12000, 10000, 'Gutierrez', '-lu-mi-ju', '7:30', 'AM', '10', 'AM');
+INSERT INTO `configcategoria` VALUES (51, 'Karate', 10000, 8500, 'José Leal', '-lu-ju-vi-sa', '7:30', 'AM', '9:30', 'AM');
+INSERT INTO `configcategoria` VALUES (52, 'Danza', 9500, 7000, 'Roberto', '-ma-mi-ju-sa', '4:30', 'PM', '6:00', 'PM');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `configcompetencia`
+-- 
+
+CREATE TABLE `configcompetencia` (
+  `tipofederacion` text NOT NULL,
+  `tipo` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `configcompetencia`
+-- 
+
+INSERT INTO `configcompetencia` VALUES ('Nacional', 'federativa');
+INSERT INTO `configcompetencia` VALUES ('Simon Bolivar', 'federativa');
+INSERT INTO `configcompetencia` VALUES ('Shoko Sato', 'nofederativa');
+INSERT INTO `configcompetencia` VALUES ('Miyagi keng', 'nofederativa');
+INSERT INTO `configcompetencia` VALUES ('Panamericano', 'federativa');
+INSERT INTO `configcompetencia` VALUES ('Open', 'federativa');
+INSERT INTO `configcompetencia` VALUES ('Mundial', 'federativa');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `configsakura`
+-- 
+
+CREATE TABLE `configsakura` (
+  `id` int(50) NOT NULL auto_increment,
+  `inscripcion` double NOT NULL,
+  `membresia` double NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- 
+-- Volcar la base de datos para la tabla `configsakura`
+-- 
+
+INSERT INTO `configsakura` VALUES (1, 8000, 7500);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `datospersonales`
+-- 
+
+CREATE TABLE `datospersonales` (
+  `nombre` text NOT NULL,
+  `apellido` text NOT NULL,
+  `cedula` int(100) NOT NULL,
+  `sexo` text NOT NULL,
+  `edad` int(3) NOT NULL,
+  `correo` varchar(100) NOT NULL,
+  `telefono` text NOT NULL,
+  `direccion` text NOT NULL,
+  `foto` varchar(254) NOT NULL,
+  `inconvenientes` varchar(254) NOT NULL,
+  `medidas` varchar(254) NOT NULL,
+  PRIMARY KEY  (`cedula`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `datospersonales`
+-- 
+
+INSERT INTO `datospersonales` VALUES ('Taner', 'Alberto', 25515326, 'Masculino', 20, 'lukateric1997@gmail.com', '04264042891', 'El Tamarindo, Sector Quebrada Seca, Los Jabillos', 'WP_20171115_005.jpg', '', '');
+INSERT INTO `datospersonales` VALUES ('Otman', 'Perea', 25380520, 'Masculino', 22, 'otman_perea@hotmail.com', '0', '', '', '', '');
+INSERT INTO `datospersonales` VALUES ('Martito', 'Gutierrez', 30897342, 'Masculino', 9, '', '0', '', '', 'Epilepsia', 'Media pastilla de acetaminfen');
+INSERT INTO `datospersonales` VALUES ('Jesus', 'Alberto', 20567123, 'Masculino', 24, 'jesusalb_12@hotmail.com', '04261064212', 'El Tamarindo, sector Quebrada Seca, Los Jabillos', '20151231_232829.jpg', '', '');
+INSERT INTO `datospersonales` VALUES ('Javier', 'Cuello', 21103335, 'Masculino', 22, 'javiercuello2020@gmail.com', '', 'El Torreon, Guarenas', '', 'Alergia', 'Loratadina');
+INSERT INTO `datospersonales` VALUES ('Nelangley', 'Soler', 25037239, 'Femenino', 20, 'npsoler@gmail.com', '04146782452', 'Nueva Casarapa, Guarenas', 'Nelangely 20150501_214411.jpg', '', '');
+INSERT INTO `datospersonales` VALUES ('Marianyela', 'Romero', 23654789, 'Femenino', 22, '', '02126785433', '', 'Marianyela 20160125_120451.jpg', '', '');
+INSERT INTO `datospersonales` VALUES ('Katiuska', 'Sarmiento', 26765092, 'Femenino', 14, '', '', '', 'Kati 20150530_214521.jpg', '', '');
+INSERT INTO `datospersonales` VALUES ('Mariangeles', 'Sarmiento', 24678543, 'Femenino', 21, 'tita_12@hotmail.com', '04264060504', 'Guatire, El Marquez', 'Tita 20160130_212006.jpg', '', '');
+INSERT INTO `datospersonales` VALUES ('Salvador', 'Alberto', 6548745, 'Masculino', 50, 'salvador@yahoo.com', '02123615216', 'Caracas, Catia', '', 'Deficiencia al respirar', 'Apretar los pulmones para desofocar');
+INSERT INTO `datospersonales` VALUES ('Valentina', 'Soler', 32037239, 'Femenino', 11, '', '02123635214', 'Ciudad Casarapa, EL tronco, hab nº 8', '', '', '');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `datosrepresentante`
+-- 
+
+CREATE TABLE `datosrepresentante` (
+  `cedula` int(100) NOT NULL,
+  `representante` text NOT NULL,
+  `nombrer` text NOT NULL,
+  `apellidor` text NOT NULL,
+  `telefonor` text NOT NULL,
+  `cedular` int(100) NOT NULL,
+  PRIMARY KEY  (`cedula`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `datosrepresentante`
+-- 
+
+INSERT INTO `datosrepresentante` VALUES (25515326, '', '', '', '0', 0);
+INSERT INTO `datosrepresentante` VALUES (25380520, '', '', '', '0', 0);
+INSERT INTO `datosrepresentante` VALUES (30897342, 'Madre', 'Betunia', 'Gutierrez', '02123636545', 15879635);
+INSERT INTO `datosrepresentante` VALUES (20567123, '', '', '', '0', 0);
+INSERT INTO `datosrepresentante` VALUES (21103335, '', '', '', '0', 0);
+INSERT INTO `datosrepresentante` VALUES (25037239, '', '', '', '0', 0);
+INSERT INTO `datosrepresentante` VALUES (23654789, '', '', '', '0', 0);
+INSERT INTO `datosrepresentante` VALUES (26765092, 'Madre', 'Olga', 'Sarmiento', '04126785432', 9765321);
+INSERT INTO `datosrepresentante` VALUES (24678543, '', '', '', '0', 0);
+INSERT INTO `datosrepresentante` VALUES (6548745, '', '', '', '0', 0);
+INSERT INTO `datosrepresentante` VALUES (32037239, 'Herman@', 'Nelangely', 'Soler', '02125214523', 25037239);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `estadoinscripcioncategoria`
+-- 
+
+CREATE TABLE `estadoinscripcioncategoria` (
+  `cedula` int(30) NOT NULL,
+  `costo` double NOT NULL,
+  `categoria` text NOT NULL,
+  `vencimiento` text NOT NULL,
+  `fechainscripcion` date NOT NULL,
+  `fechavenceinscripcion` date NOT NULL,
+  `fechapago` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `estadoinscripcioncategoria`
+-- 
+
+INSERT INTO `estadoinscripcioncategoria` VALUES (25380520, 10000, 'Karate', 'Mensual', '2017-11-20', '2017-12-20', '2017-12-20');
+INSERT INTO `estadoinscripcioncategoria` VALUES (25380520, 9500, 'Pesas', 'Mensual', '2017-11-20', '2017-12-20', '2017-12-20');
+INSERT INTO `estadoinscripcioncategoria` VALUES (6548745, 36000, 'Natación', 'Trimestral', '2017-11-21', '2018-02-21', '2017-12-21');
+INSERT INTO `estadoinscripcioncategoria` VALUES (6548745, 9500, 'Pesas', 'Mensual', '2017-11-21', '2017-12-21', '2017-12-21');
+INSERT INTO `estadoinscripcioncategoria` VALUES (32037239, 9500, 'Danza', 'Mensual', '2017-11-21', '2017-12-21', '2017-12-21');
+INSERT INTO `estadoinscripcioncategoria` VALUES (25515326, 10000, 'Karate', 'Mensual', '2017-11-20', '2017-12-20', '2017-12-20');
+INSERT INTO `estadoinscripcioncategoria` VALUES (25515326, 12000, 'Natación', 'Mensual', '2017-11-22', '2017-12-22', '2017-12-22');
+INSERT INTO `estadoinscripcioncategoria` VALUES (30897342, 6500, 'TRX', 'Mensual', '2017-11-22', '2017-12-22', '2017-12-22');
+INSERT INTO `estadoinscripcioncategoria` VALUES (21103335, 10000, 'Karate', 'Mensual', '2017-11-22', '2017-12-22', '2017-12-22');
+INSERT INTO `estadoinscripcioncategoria` VALUES (25037239, 0, 'Danza', 'Indefinido', '2017-11-22', '2017-11-22', '2017-12-22');
+INSERT INTO `estadoinscripcioncategoria` VALUES (23654789, 114000, 'Danza', 'Anual', '2017-11-22', '2018-11-22', '2017-12-22');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `estadoinscripcionsakura`
+-- 
+
+CREATE TABLE `estadoinscripcionsakura` (
+  `cedula` int(30) NOT NULL,
+  `costo` double NOT NULL,
+  `vencimiento` text NOT NULL,
+  `fechainscripcion` date NOT NULL,
+  `fechavenceinscripcion` date NOT NULL,
+  `fechapago` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `estadoinscripcionsakura`
+-- 
+
+INSERT INTO `estadoinscripcionsakura` VALUES (25380520, 25500, 'Trimestral', '2017-11-20', '2018-02-20', '2017-12-20');
+INSERT INTO `estadoinscripcionsakura` VALUES (25515326, 8500, 'Mensual', '2017-11-20', '2017-12-20', '2017-12-20');
+INSERT INTO `estadoinscripcionsakura` VALUES (20567123, 8500, 'Otro', '2017-10-01', '2017-11-01', '2017-12-22');
+INSERT INTO `estadoinscripcionsakura` VALUES (21103335, 8500, 'Mensual', '2017-11-20', '2017-12-20', '2017-12-20');
+INSERT INTO `estadoinscripcionsakura` VALUES (30897342, 8500, 'Mensual', '2017-11-22', '2017-12-22', '2017-12-22');
+INSERT INTO `estadoinscripcionsakura` VALUES (25037239, 8500, 'Mensual', '2017-11-22', '2017-12-22', '2017-12-22');
+INSERT INTO `estadoinscripcionsakura` VALUES (23654789, 25500, 'Trimestral', '2017-11-22', '2018-02-22', '2017-12-22');
+INSERT INTO `estadoinscripcionsakura` VALUES (6548745, 8000, 'Mensual', '2017-11-21', '2017-12-21', '2017-12-21');
+INSERT INTO `estadoinscripcionsakura` VALUES (32037239, 8000, 'Mensual', '2017-11-21', '2017-12-21', '2017-12-21');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `estadomembresiacategoria`
+-- 
+
+CREATE TABLE `estadomembresiacategoria` (
+  `cedula` int(100) NOT NULL,
+  `costo` double NOT NULL,
+  `categoria` text NOT NULL,
+  `vencimiento` text NOT NULL,
+  `fechamembresia` date NOT NULL,
+  `fechavencemembresia` date NOT NULL,
+  `fechapago` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `estadomembresiacategoria`
+-- 
+
+INSERT INTO `estadomembresiacategoria` VALUES (21103335, 8500, 'Karate', 'Mensual', '2017-11-22', '2017-12-22', '2017-12-22');
+INSERT INTO `estadomembresiacategoria` VALUES (25515326, 5000, 'Natación', 'Quincenal', '2017-11-22', '2017-12-07', '2017-12-22');
+INSERT INTO `estadomembresiacategoria` VALUES (30897342, 5000, 'TRX', 'Mensual', '2017-11-22', '2017-12-22', '2017-12-22');
+INSERT INTO `estadomembresiacategoria` VALUES (25515326, 8500, 'Karate', 'Mensual', '2017-11-20', '2017-12-20', '2017-12-20');
+INSERT INTO `estadomembresiacategoria` VALUES (25380520, 8000, 'Pesas', 'Mensual', '2017-11-20', '2017-12-20', '2017-12-20');
+INSERT INTO `estadomembresiacategoria` VALUES (23654789, 21000, 'Danza', 'Trimestral', '2017-11-22', '2018-02-22', '2017-12-22');
+INSERT INTO `estadomembresiacategoria` VALUES (6548745, 8000, 'Pesas', 'Mensual', '2017-11-21', '2017-12-21', '2017-12-21');
+INSERT INTO `estadomembresiacategoria` VALUES (6548745, 10000, 'Natación', 'Mensual', '2017-11-21', '2017-12-21', '2017-12-21');
+INSERT INTO `estadomembresiacategoria` VALUES (32037239, 7000, 'Danza', 'Mensual', '2017-11-21', '2017-12-21', '2017-12-21');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `estadomembresiasakura`
+-- 
+
+CREATE TABLE `estadomembresiasakura` (
+  `cedula` int(100) NOT NULL,
+  `costo` double NOT NULL,
+  `vencimiento` text NOT NULL,
+  `fechamembresia` date NOT NULL,
+  `fechavencemembresia` date NOT NULL,
+  `fechapago` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `estadomembresiasakura`
+-- 
+
+INSERT INTO `estadomembresiasakura` VALUES (25515326, 7500, 'Mensual', '2017-11-20', '2017-12-20', '2017-12-20');
+INSERT INTO `estadomembresiasakura` VALUES (25380520, 7500, 'Mensual', '2017-11-20', '2017-12-20', '2017-12-20');
+INSERT INTO `estadomembresiasakura` VALUES (20567123, 7500, 'Otro', '2017-10-02', '2017-11-01', '2017-12-22');
+INSERT INTO `estadomembresiasakura` VALUES (21103335, 3750, 'Quincenal', '2017-11-20', '2017-12-05', '2017-12-20');
+INSERT INTO `estadomembresiasakura` VALUES (30897342, 7500, 'Mensual', '2017-11-22', '2017-12-22', '2017-12-22');
+INSERT INTO `estadomembresiasakura` VALUES (25037239, 3750, 'Quincenal', '2017-11-22', '2017-12-07', '2017-12-22');
+INSERT INTO `estadomembresiasakura` VALUES (23654789, 22500, 'Trimestral', '2017-11-22', '2018-02-22', '2017-12-22');
+INSERT INTO `estadomembresiasakura` VALUES (6548745, 7500, 'Mensual', '2017-11-21', '2017-12-21', '2017-12-21');
+INSERT INTO `estadomembresiasakura` VALUES (32037239, 7500, 'Mensual', '2017-11-21', '2017-12-21', '2017-12-21');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `estadototalcategoria`
+-- 
+
+CREATE TABLE `estadototalcategoria` (
+  `cedula` int(100) NOT NULL,
+  `inscripcion` double NOT NULL,
+  `membresia` double NOT NULL,
+  `total` double NOT NULL,
+  `formadepago` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `estadototalcategoria`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `temporalestadoinscripcioncategoria`
+-- 
+
+CREATE TABLE `temporalestadoinscripcioncategoria` (
+  `cedula` int(30) NOT NULL,
+  `costo` double NOT NULL,
+  `categoria` text NOT NULL,
+  `vencimiento` text NOT NULL,
+  `fechainscripcion` date NOT NULL,
+  `fechavenceinscripcion` date NOT NULL,
+  `fechapago` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `temporalestadoinscripcioncategoria`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `temporalestadoinscripcionsakura`
+-- 
+
+CREATE TABLE `temporalestadoinscripcionsakura` (
+  `cedula` int(30) NOT NULL,
+  `costo` double NOT NULL,
+  `vencimiento` text NOT NULL,
+  `fechainscripcion` date NOT NULL,
+  `fechavenceinscripcion` date NOT NULL,
+  `fechapago` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `temporalestadoinscripcionsakura`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `temporalestadomembresiacategoria`
+-- 
+
+CREATE TABLE `temporalestadomembresiacategoria` (
+  `cedula` int(30) NOT NULL,
+  `costo` double NOT NULL,
+  `categoria` text NOT NULL,
+  `vencimiento` text NOT NULL,
+  `fechamembresia` date NOT NULL,
+  `fechavencemembresia` date NOT NULL,
+  `fechapago` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `temporalestadomembresiacategoria`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `temporalestadomembresiasakura`
+-- 
+
+CREATE TABLE `temporalestadomembresiasakura` (
+  `cedula` int(30) NOT NULL,
+  `costo` double NOT NULL,
+  `vencimiento` text NOT NULL,
+  `fechamembresia` date NOT NULL,
+  `fechavencemembresia` date NOT NULL,
+  `fechapago` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `temporalestadomembresiasakura`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `trayectodanza`
+-- 
+
+CREATE TABLE `trayectodanza` (
+  `id` int(30) NOT NULL auto_increment,
+  `cedula` int(30) NOT NULL,
+  `lugar` int(10) NOT NULL,
+  `nombrecompetencia` text NOT NULL,
+  `lugarcompetencia` text NOT NULL,
+  `arena` text NOT NULL,
+  `tipo` text NOT NULL,
+  `federacionencargada` text NOT NULL,
+  `fechainicio` text NOT NULL,
+  `fechafinal` text NOT NULL,
+  `fechaida` text NOT NULL,
+  `fecharegreso` text NOT NULL,
+  `categoria` text NOT NULL,
+  `edades` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+
+-- 
+-- Volcar la base de datos para la tabla `trayectodanza`
+-- 
+
+INSERT INTO `trayectodanza` VALUES (6, 25037239, 2, 'Sport Competición 2017', 'Miranda', 'Guarenas', 'Recreativa', 'Danza Mirandina', '2017-11-16', '2017-11-20', '2017-11-19', '2017-11-20', 'Folklórica', 'Adulto I (19-24)');
+INSERT INTO `trayectodanza` VALUES (7, 25037239, 3, 'Baile Folklorico Best Celler', 'Caracas', 'Estado Miranda', 'Oficial', '', '2016-11-01', '2016-11-10', '2016-11-04', '2016-11-05', 'Folklórica', 'Youth (16-18)');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `trayectokarate`
+-- 
+
+CREATE TABLE `trayectokarate` (
+  `id` int(30) NOT NULL auto_increment,
+  `cedula` int(30) NOT NULL,
+  `lugar` int(10) NOT NULL,
+  `nombrecompetencia` text NOT NULL,
+  `lugarcompetencia` text NOT NULL,
+  `arena` text NOT NULL,
+  `tipo` text NOT NULL,
+  `federacion` text NOT NULL,
+  `federacionencargada` text NOT NULL,
+  `fechainicio` text NOT NULL,
+  `fechafinal` text NOT NULL,
+  `fechaida` text NOT NULL,
+  `fecharegreso` text NOT NULL,
+  `categoria` text NOT NULL,
+  `edades` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
+
+-- 
+-- Volcar la base de datos para la tabla `trayectokarate`
+-- 
+
+INSERT INTO `trayectokarate` VALUES (26, 25515326, 1, 'Copa Shoko Sato', 'Caracas', 'Estado Miranda', 'No federativa', 'Shoko Sato', '', '2017-11-01', '2017-11-03', '2017-11-01', '', 'Kata', 'Adulto joven (18-24)');
+INSERT INTO `trayectokarate` VALUES (27, 25515326, 6, 'Wold Champion 2016 Japon', 'Tokyo', 'Tokyo Arena', 'Federativa', 'Mundial', 'Word Champion Federation', '2016-11-02', '2016-11-06', '2016-11-01', '2016-11-15', 'Kata', 'Adulto joven (18-24)');
+INSERT INTO `trayectokarate` VALUES (24, 25380520, 2, 'Shito Kai Competition', 'México', 'Estadio Nacional de Méxicali', 'Federativa', 'Open', 'Shito Kai', '2017-11-01', '2017-11-15', '2017-11-01', '2017-11-17', 'Kata', 'Adulto (25-34)');
+INSERT INTO `trayectokarate` VALUES (25, 25515326, 0, 'Simon Bolivar 2017 48th Internacional', 'Zulia', 'World Arena Zuliana', 'Federativa', 'Simon Bolivar', 'Gobierno Zuliano', '2017-09-01', '2017-09-05', '2017-09-01', '2017-09-10', 'Arbitraje', '----------');
